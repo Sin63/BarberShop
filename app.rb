@@ -50,9 +50,9 @@ get '/barber/:id' do
 	erb :bookings
   end
 
-#   get '/bookings/:id' do
-# 	@clients = Client.find params[:id]
-# 	erb :bookings
-#   end
+    get '/client/:id' do
+ 	@client = Client.find params[:id]
+ 	erb :client
+   end
 
   
