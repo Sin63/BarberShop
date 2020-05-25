@@ -6,7 +6,7 @@ require 'sinatra/reloader'
 set :database, {adapter: "sqlite3", database: "barbershop.db"}
 
 class Client < ActiveRecord::Base
-	validates :name, presence: true, length: { minimum: 3 }, numericality: true
+	validates :name, presence: true, length: { minimum: 3 }
 	validates :phone, presence: true
 	validates :datestamp, presence: true
 	validates :color, presence: true
@@ -43,3 +43,16 @@ get '/barber/:id' do
 	@barber = Barber.find params[:id]
 	erb :barber
   end
+
+  get '/bookings' do
+	
+	@clients = Client.order('created_at DESC')
+	erb :bookings
+  end
+
+#   get '/bookings/:id' do
+# 	@clients = Client.find params[:id]
+# 	erb :bookings
+#   end
+
+  
