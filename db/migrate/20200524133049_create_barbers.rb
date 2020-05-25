@@ -3,7 +3,6 @@ class CreateBarbers < ActiveRecord::Migration[6.0]
     create_table :barbers do |t|
       t.text :name
      
-
       t.timestamps
     end
 
