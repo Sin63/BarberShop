@@ -5,21 +5,21 @@
 <form action="/visit" method="POST" role="form">
   <div class="form-group">
     <label for=>Ваше имя</label>
-    <input  name="client[name]" type="text" class="form-control" placeholder="Введите ваше имя" value="">
+    <input  name="client[name]" type="text" class="form-control" placeholder="Введите ваше имя" value="<%= @c.name%>">
   </div>
   
  
 
     <div class="form-group">
     <label for=>Ваш телефон</label>
-    <input  name="client[phone]" type="text" class="form-control" placeholder="Введите ваш номер" value="">
+    <input  name="client[phone]" type="text" class="form-control" placeholder="Введите ваш номер" value="<%= @c.phone %>">
   </div>
   
  
 
    <div class="form-group">
     <label for=>Когда вас ждать</label>
-    <input id="datetimepicker" name="client[datestamp]" type="text" class="form-control" placeholder="Введите дату и время" value="<%" >
+    <input id="datetimepicker" name="client[datestamp]" type="text" class="form-control" placeholder="Введите дату и время" value="<%= @c.datestamp %>" >
   </div>
 
      
@@ -27,7 +27,7 @@
       
      <div class="form-group">
     <label>Цвет краски</label>
-   <select id="color" name="client[color]"  value=""  >
+   <select id="color" name="client[color]"  value="<%= @c.color %>" >
       <option value=>Цвета</option>
       <option value="#7bd148">Green</option>
       <option value="#5484ed">Bold blue</option>
